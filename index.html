@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Japanese App | Bài học đầu tiên</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="top">Japanese App</h1>
+    <p>Học tiếng Nhật qua bài đọc và từ vựng theo ngữ cảnh</p>
+    <nav>
+        <a href="#top">Đầu trang</a>
+        <a href="#reading">Bài đọc</a>
+        <a href="#vocabulary">Từ vựng</a>
+    </nav>
+    <main>
+        <section id="reading" class="card">
+            <h2>Bài đọc hôm nay</h2>
+            <p lang="ja" class="japanese-text">私は学生です。</p>
+            <p>Nghĩa: Tôi là sinh viên.</p>
+        </section>
+
+        <section id="vocabulary" class="card">
+            <h2>Từ vựng</h2>
+            <p id="vocabulary-count"></p>
+            <button type="button" id="show-meaning">Hiện nghĩa từ đầu tiên</button>
+            <p id="word-meaning">Chưa hiện nghĩa</p>
+            <label for="vocabulary-search">Từ vựng</label>
+            <input type="search" id="vocabulary-search" class="search-input" placeholder="Ví dụ: 学生">
+            <p id="search-status"></p>
+            <ul id="vocabulary-list">
+                <li>
+                    <ruby lang="ja">学生<rt>がくせい</rt></ruby> — sinh viên
+                </li>
+                <li>
+                    <ruby lang="ja">日本語<rt>にほんご</rt></ruby> — tiếng Nhật
+                </li>
+                <li>
+                    <ruby lang="ja">勉強<rt>べんきょう</rt></ruby> — việc học
+                </li>
+            </ul>
+            <form id="add-vocabulary-form">
+                <h3>Bạn có muốn thêm từ mới</h3>
+                <div class="form-field">
+                    <label for="new-word">Từ mới</label>
+                    <input type="text" id="new-word">
+                </div>
+                <div class="form-field">
+                    <label for="new-meaning">Nghĩa của từ</label>
+                    <input type="text" id="new-meaning">
+                </div>
+                <button type="submit">Thêm từ</button>
+                <p id="form-status"></p>
+            </form>
+        </section>
+
+        <section class="card">
+            <label for="post-id">Mã bài viết</label>
+            <input id="post-id" type="number" min="1" step="1" value="1">
+            <h2>Bài viết thử từ API</h2>
+            <p id="api-status"></p>
+            <h3 id="api-title"></h3>
+            <p id="api-body"></p>
+            <button type="button" id="load-post">Tải lại bài viết</button>
+            <label for="post-search">Tìm kiếm bài viết</label>
+            <input type="search" id="post-search">
+            <button type="button" id="reload-posts">Tải lại danh sách</button>
+            <p id="post-status"></p>
+            <ul id="posts-list"></ul>
+        </section>
+    </main>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

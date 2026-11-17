@@ -1,0 +1,101 @@
+body {
+    font-family: sans-serif;
+    color: black;
+    background-color: #f8d7ad;
+    line-height: 1.6;
+
+    box-sizing: border-box;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+h1 {
+    color: #2e5ec5;
+}
+
+h2 {
+    color: #0f766e;
+}
+
+.card {
+    background-color: #fff4e2;
+    border: 1px solid #d1d5db;
+    padding: 16px;
+    margin-bottom: 0;
+}
+
+nav {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+nav a {
+    padding: 8px 12px;
+    background-color: #fff4e2;
+    color: #164e63;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    background-color: #fce4bd;
+}
+
+nav a:focus-visible {
+    outline: 3px solid #2e3ec5;
+    outline-offset: 3px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+.japanese-text {
+    font-size: 1.25rem;
+    line-height: 2;
+}
+
+.search-input {
+    width: 100%;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+#add-vocabulary-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#add-vocabulary-form input {
+    width: 100%;
+    box-sizing: border-box;
+    font: inherit;
+    padding: 4px;
+}
+
+#add-vocabulary-form button {
+    align-self: flex-start;
+    padding: 8px 12px;
+}
