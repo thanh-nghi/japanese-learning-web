@@ -1,0 +1,26 @@
+name: Check JavaScript
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Lay source code
+        uses: actions/checkout@v6
+
+      - name: Chuan bi Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Kiem tra cu phap
+        run: |
+          node --check script.js
+          node --check validators.js
+          node --check storage.js
+          node --check api.js
