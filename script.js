@@ -1,6 +1,6 @@
 import { fetchPost, fetchPosts } from "./api.js";
 import { saveVocabularies, loadVocabularies } from "./storage.js";
-const greeting = "Xin chào";
+const greeting =;
 console.log(greeting);
 const japaneseWord = "学生";
 const meaning = "sinh viên";
