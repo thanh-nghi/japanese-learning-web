@@ -35,5 +35,5 @@ test("Từ chối số lần ôn âm", function () {
         reviewCount: -1
     };
 
-    assert.strictEqual(isValidVocabulary(item), true);
+    assert.strictEqual(isValidVocabulary(item), false);
 });
