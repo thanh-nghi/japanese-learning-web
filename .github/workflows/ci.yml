@@ -24,3 +24,7 @@ jobs:
           node --check validators.js
           node --check storage.js
           node --check api.js
+
+      - name: Chay test logic
+        run: |
+          node --test tests/validators.test.mjs
