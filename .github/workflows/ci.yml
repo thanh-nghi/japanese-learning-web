@@ -38,6 +38,7 @@ jobs:
   deploy_demo:
     needs: syntax
     runs-on: ubuntu-latest
+    if: ${{github.event_name == 'push' && github.ref == 'refs/heads/main'}}
     steps:
       - name: Mo phong deploy
         run: echo "CI passed - deploy demo"
