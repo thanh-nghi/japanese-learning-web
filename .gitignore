@@ -4,4 +4,4 @@ worklog/
 /worklog.md
 /git-practice.md
 .playwright-mcp/
-
+node_modules/

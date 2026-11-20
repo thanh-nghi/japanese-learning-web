@@ -18,9 +18,19 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Cai dat thu vien
+        run: npm ci
+
       - name: Kiem tra cu phap
         run: |
           node --check script.js
           node --check validators.js
           node --check storage.js
           node --check api.js
+
+      - name: Lint
+        run: npx eslint script.js validators.js storage.js api.js tests/validators.test.mjs
+
+      - name: Chay test logic
+        run: |
+          node --test tests/validators.test.mjs
