@@ -25,3 +25,5 @@ export function isValidVocabulary(item) {
     }
     return true;
 }
+
+const lintCI = 123;
