@@ -34,3 +34,10 @@ jobs:
       - name: Chay test logic
         run: |
           node --test tests/validators.test.mjs
+
+  deploy_demo:
+    needs: syntax
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mo phong deploy
+        run: echo "CI passed - deploy demo"
