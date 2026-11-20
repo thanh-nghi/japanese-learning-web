@@ -19,7 +19,7 @@ export function loadVocabularies(fallback) {
                 return fallback;
             }
         } return parsedVocab
-    } catch (error) {
+    } catch {
         return fallback;
     }
 }
