@@ -35,6 +35,16 @@ jobs:
         run: |
           node --test tests/validators.test.mjs
 
+      - name: Chuan bi thu muc website
+        run: |
+          mkdir -p _site
+          cp index.html style.css script.js api.js storage.js validators.js _site/
+
+      - name: Dong goi va upload
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site  
+
   deploy_demo:
     needs: syntax
     runs-on: ubuntu-latest
