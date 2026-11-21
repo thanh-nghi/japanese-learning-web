@@ -45,10 +45,19 @@ jobs:
         with:
           path: _site  
 
-  deploy_demo:
+  deploy:
     needs: syntax
     runs-on: ubuntu-latest
     if: ${{github.event_name == 'push' && github.ref == 'refs/heads/main'}}
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - name: Mo phong deploy
-        run: echo "CI passed - deploy demo"
+      - id: deployment
+        uses: actions/deploy-pages@v4
