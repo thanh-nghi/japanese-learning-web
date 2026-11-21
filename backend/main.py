@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
 app = FastAPI()
 
@@ -31,3 +31,10 @@ words = [
 @app.get("/words")
 def get_words():
     return words
+
+@app.get("/words/{word_id}")
+def get_word(word_id: int):
+    for word in words:
+        if word["id"] == word_id:
+            return word
+    raise HTTPException(status_code=404, detail="Không tìm thấy từ")
