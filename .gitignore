@@ -5,3 +5,5 @@ worklog/
 /git-practice.md
 .playwright-mcp/
 node_modules/
+backend/.venv/
+__pycache__/
