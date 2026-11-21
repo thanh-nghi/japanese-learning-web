@@ -34,3 +34,30 @@ jobs:
       - name: Chay test logic
         run: |
           node --test tests/validators.test.mjs
+
+      - name: Chuan bi thu muc website
+        run: |
+          mkdir -p _site
+          cp index.html style.css script.js api.js storage.js validators.js _site/
+
+      - name: Dong goi va upload
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site  
+
+  deploy:
+    needs: syntax
+    runs-on: ubuntu-latest
+    if: ${{github.event_name == 'push' && github.ref == 'refs/heads/main'}}
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
